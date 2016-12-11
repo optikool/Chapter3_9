@@ -5,10 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import packt.selenium.chap3_9.pageobjects.Google;
 import packt.selenium.chap3_9.pageobjects.GoogleSearchPage;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,7 +23,9 @@ public class SearchGoogleTest {
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+        File file = new File("C:/Selenium/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

@@ -14,6 +14,7 @@ public class Google {
 
     public Google(WebDriver driver){
         this.driver = driver;
+        
         baseURL = "https://www.google.com/";
         driver.get(baseURL + "?gws_rd=cr,ssl&ei=qZlNVpOUMNCauQS0iYmoCA&fg=1");
         System.out.println(driver.getTitle());
